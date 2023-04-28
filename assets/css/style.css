@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Montserrat&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-primary: primary: #FFF;
+    --font-heading: 'Corinthia';
+    --font-default: 'Montserrat';
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    background-image: url("../images/hero.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position-y: -500px;
+    font-family: var(--font-default);
+    color: #FFF
+}
+.zooma{
+    animation: zoom 5s;
+}
+
+
+#hamburguer{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 3rem;
+    width: 3rem;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    z-index: 11;
+
+}
+
+.Loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+    
+
+.spin{
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    border: 16px solid #999;
+    border-top: 16px solid #424258;
+    animation: spin 5s infinite;
+   
+}
+.hide  {
+    display: none;
+}
+
+@keyframes spin{
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+#hamburguer .linha{
+    width: 100%;
+    height: .2rem;
+    background-color: #4F4F4F;
+    box-shadow: 0 .2rem .2rem #FFF;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    right: -22rem;
+    background-color: #FFF;
+    height: 100vh;
+    width: 20rem;
+    z-index: 10;
+    transition: right 1s;
+    font-size: 2rem;
+}
+
+#menu l1 {
+    list-style: none;
+
+}
+
+#menu a{
+    text-decoration: none;
+    color: #BEC0C7;
+}
+
+#menu a:hover{
+    color: #424258
+}
+
+.menu-show{
+    right: 0;
+
+}
+header h1 {
+    font-size: clamp(4rem, 12vw, 12.8rem);
+}
+
+header::before{
+    content: '';
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transform:scale(1.5);
+}
+
+
+@keyframes zoom {
+    0%{
+        transform:scale(1.5);
+    }
+    100%{
+        transform: sclae(1.2);
+    }
+}
+
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25rem;
+    height: 100vh;
+    background-size: cover;
+    gap: 20px
+
+}
+
+
+h1{
+    text-align: center;
+    font-size: 12.8rem;
+    font-weight: 700;
+    color: #FFF;
+    font-family: var(--font-heading);
+    }
+
+
+.p_cima {
+    text-align: center;
+    font-size: 3.4rem;
+    color:#FFF;
+   
+}
+
+.p_baixo{
+    text-align: center;
+    font-size: 1.8rem;
+    color:#FFF;
+    
+}
+
+.button{
+    background: linear-gradient(90deg, #424258, #BEC0C7);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 1.8rem ;
+    font-family:var(--font-default);
+    text-decoration: none;
+
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 5px #45403F;
+   
+}
+
+img.avatar{
+    border-radius: 50%;
+    margin-left: 2rem;
+}
+
+.section-presentation{
+    display: flex;
+    color: #BEC0C7;
+    font-size: 1.8rem;
+    gap: 2rem;
+}
+
+.section-presentation div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 2rem;
+    align-items: flex-start;
+    font-size: 2.0rem;
+}
+
+#section-projects{
+    background-color: black;
+}
+
+#section-projects ul{
+    display: flex;
+    justify-content: space-around;
+    gap: 4rem;
+    margin-top: 10rem;
+}
+
+#section-projects li{
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.card-image img{
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+}
+
+.card-info{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .5s, bottom .5s;
+}
+
+#section-projects li:hover .card-info{
+    opacity: 1;
+    bottom: 20%;
+}
+
+
+#section-budged{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/fundo.jpg');
+    background-size: cover;
+}
+
+#section-budged form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    background-color: #8C8C8C99;
+    backdrop-filter: blur(1px);
+    border-radius: 10px;
+    width: 80%;
+    padding: 2rem;
+}
+
+#section-budged form h4{
+    position: absolute;
+    top: -15%;
+    background-color: #45403F;
+    padding: .3rem 2rem;
+    border-radius: 5px;
+}
+
+#section-budged form output{
+    grid-column: 2;
+}
+
+
+@media screen and (max-width: 600px){
+    nav ul {
+        width: 50%;
+    }
+
+
+    header {
+        padding: 20rem 2rem;
+    }
+
+    .section-presentation {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 1.6rem;
+        padding-bottom: 2rem;
+    }
+
+    .section-presentation div {
+        align-items: center;
+    }
+
+    .card-image img {
+        width: 100%;
+    }
+    
+
+    #section-projects li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #section-projects ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #section-projects li:hover .card-info {
+        opacity: 1;
+        bottom: -4rem;
+    }
+
+    #hamburguer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 3rem;
+        width: 3rem;
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 11;
+        cursor: pointer;
+        }
+        
+        #hamburguer .linha {
+        width: 100%;
+        height: 0.4rem;
+        background-color: #4F4F4F;
+        box-shadow: 0 .2rem .2rem #FFF;
+        }
+
+    .avatar{
+        width: 70%;
+        padding-top: 20px;
+    }
+
+    .text-apresentation{
+        font-size: 70%;
+        margin: 10px;
+    }
+}
